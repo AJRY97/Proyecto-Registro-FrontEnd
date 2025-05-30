@@ -20,15 +20,35 @@ export default function RegisterForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input name="name" placeholder="Nombre" onChange={handleChange} required />
-            <input type="email" name="email" placeholder="Correo electrónico" onChange={handleChange} required />
-            <input type="password" name="password" placeholder="Contraseña" onChange={handleChange} required minLength={6} />
-            <button type="submit">Registrarse</button>
-            <Link to="/usuarios">
-                <button style={{ marginTop: "1rem" }}>Ver usuarios registrados</button>
-            </Link>
+        <div className="container mt-5">
+            <h2 className="mb-4">Registro de Usuario</h2>
+            <form onSubmit={handleSubmit} className="border p-4 rounded shadow-sm bg-light">
+                <div className="mb-3">
+                    <label htmlFor="name" className="form-label">Nombre Completo</label>
+                    <input type="text" className="form-control" name="name" placeholder="Nombre" onChange={handleChange} required />
+                </div>
 
-        </form>
+                <div className="mb-3">
+
+                    <label htmlFor="name" className="form-label">Correo</label>
+                    <input type="email" className="form-control" name="email" placeholder="Correo electrónico" onChange={handleChange} required />
+
+                </div>
+
+                <div className="mb-3">
+
+                    <label htmlFor="name" className="form-label">Contraseña</label>
+                    <input type="password" className="form-control" name="password" placeholder="Contraseña" onChange={handleChange} required minLength={6} />
+
+                </div>
+
+                <button type="submit" className="btn btn-primary w-100">Registrarse</button>
+
+                <Link to="/usuarios">
+                    <button className="btn btn-primary w-100" style={{ marginTop: "1rem" }}>Ver usuarios registrados</button>
+                </Link>
+
+            </form>
+        </div>
     );
 }

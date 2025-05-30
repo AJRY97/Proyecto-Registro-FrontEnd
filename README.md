@@ -1,12 +1,47 @@
-# React + Vite
+# App de Registro de Usuarios
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Objetivo
+Construir una pequeña aplicacion web de registro de usuarios, donde se pueda registrar, guardar y visualizar informacion en una base de datos utilizando tecnologias Full Stack (React + Flask + PostgreSQL).
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias utilizadas
 
-## Expanding the ESLint configuration
+### Frontend
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React.js (Vite)
+- Bootstrap 5
+- Fetch API
+
+### Backend
+
+- Python
+- Flask
+- Flask-CORS
+- Flask-SQLAlchemy
+- PostgreSQL
+- Werkzeug (para hashear contraseñas)
+
+---
+
+## Funcionalidades principales
+
+### Registro de usuarios
+- Formulario con campos: nombre, correo y contraseña
+- Validaciones frontend:
+  - Todos los campos requeridos
+  - Email con formato valido
+  - Contraseña minima de 6 caracteres
+- Validaciones backend:
+  - Verifica que el correo no este registrado previamente
+  - Contraseña hasheada antes de guardar
+
+### Visualizacion de usuarios
+- Lista que muestra nombre y correo
+- Botón Editar que permite modificar nombre y correo (requiere ingresar contraseña para confirmar cambios)
+- Boton Eliminar para borrar un usuario de la base de datos
+
+### Base de datos
+- Se crea automaticamente al iniciar el backend
+- Tabla: `User`
+  - Campos: id, name, email, password
+

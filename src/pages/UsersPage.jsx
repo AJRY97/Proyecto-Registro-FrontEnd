@@ -7,7 +7,7 @@ export default function UsersPage() {
       <h1>Usuarios Registrados</h1>
       <UserList />
       <Link to="/">
-        <button>Volver al registro</button>
+        <button className="btn btn-primary w-100">Volver al registro</button>
       </Link>
     </div>
   );
