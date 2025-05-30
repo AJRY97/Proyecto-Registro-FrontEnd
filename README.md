@@ -1,47 +1,31 @@
-# App de Registro de Usuarios
 
-## Objetivo
-Construir una pequeña aplicacion web de registro de usuarios, donde se pueda registrar, guardar y visualizar informacion en una base de datos utilizando tecnologias Full Stack (React + Flask + PostgreSQL).
+# Proyecto Registro de Usuarios – Frontend
 
+Este es el frontend de una mini aplicación full stack de registro de usuarios. Permite registrar nuevos usuarios y visualizar, editar y eliminar usuarios existentes.
 
-## Tecnologias utilizadas
+## Tecnologías usadas
 
-### Frontend
-
-- React.js (Vite)
-- Bootstrap 5
+- React
+- Bootstrap
 - Fetch API
+- HTML5 y CSS3
 
-### Backend
+## Estructura principal
 
-- Python
-- Flask
-- Flask-CORS
-- Flask-SQLAlchemy
-- PostgreSQL
-- Werkzeug (para hashear contraseñas)
+- `RegisterForm.jsx`: formulario de registro con validaciones básicas.
+- `UserList.jsx`: lista de usuarios con botones para editar y eliminar.
+- `App.jsx`: enrutador principal para las vistas.
 
----
+## Funcionalidades
 
-## Funcionalidades principales
+- Registrar usuarios con validación de campos obligatorios y formato de correo.
+- Editar nombre, correo y contraseña (verificación obligatoria de contraseña).
+- Eliminar usuarios.
+- Mostrar usuarios registrados en tiempo real.
 
-### Registro de usuarios
-- Formulario con campos: nombre, correo y contraseña
-- Validaciones frontend:
-  - Todos los campos requeridos
-  - Email con formato valido
-  - Contraseña minima de 6 caracteres
-- Validaciones backend:
-  - Verifica que el correo no este registrado previamente
-  - Contraseña hasheada antes de guardar
+## Conexión con backend
 
-### Visualizacion de usuarios
-- Lista que muestra nombre y correo
-- Botón Editar que permite modificar nombre y correo (requiere ingresar contraseña para confirmar cambios)
-- Boton Eliminar para borrar un usuario de la base de datos
+El frontend realiza peticiones HTTP (GET, POST, PUT, DELETE) a un servidor Flask corriendo usando `fetch()`.
 
-### Base de datos
-- Se crea automaticamente al iniciar el backend
-- Tabla: `User`
-  - Campos: id, name, email, password
+
 
